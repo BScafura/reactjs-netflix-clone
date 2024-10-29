@@ -33,3 +33,10 @@ Clone the project to your local machine:
 ```bash
 git clone https://github.com/yourusername/netflix-clone.git
 cd netflix-clone
+```
+
+### 2. Run locally
+```bash
+npm run dev
+```
+
