@@ -1,0 +1,31 @@
+name: API Key Workflow
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  use_api_keys:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Display Environment Variables
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+        run: |
+          echo "Using Google API Key: $GOOGLE_API_KEY"
+          echo "Using TMDB API Token: $TMDB_API_TOKEN"
+
+      - name: Example API Call (optional)
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+        run: |
+          # Example of using the API tokens in a request
+          curl -H "Authorization: Bearer $TMDB_API_TOKEN" https://api.themoviedb.org/3/movie/popular?api_key=$GOOGLE_API_KEY
