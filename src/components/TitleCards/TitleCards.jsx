@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./TitleCards.css";
 import {} from "react";
 import { Link } from "react-router-dom";
+import { config } from "../../../config";
 
 const TitleCards = ({ title, category }) => {
   const cardsRef = useRef();
@@ -11,8 +12,7 @@ const TitleCards = ({ title, category }) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NjRiY2UzYjEwY2UzMTg0MjQ4ZTI2NzYxNzZkZjZlMSIsIm5iZiI6MTczMDE1MTA1Ny42MTcxMTcsInN1YiI6IjY2MmY5ZDk3NTExZDA5MDEyNGM1ODllNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.w1zTYldCIaUW7D3Uv403dRLVIhncLj0eQn5IIyUA4Nk",
+      Authorization: config.API_KEY,
     },
   };
 

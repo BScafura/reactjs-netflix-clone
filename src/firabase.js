@@ -9,13 +9,14 @@ import {
 } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { toast } from "react-toastify";
+import { config } from "../config";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDXY36xC0cYYCVSonjy3pLBCFsp_WfqPe8",
+  apiKey: config.GOOGLE_API_KEY,
   authDomain: "netflix-clone-8a020.firebaseapp.com",
   projectId: "netflix-clone-8a020",
   storageBucket: "netflix-clone-8a020.appspot.com",
